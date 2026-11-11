@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "automated-dead-code-stripper"
+version = "0.1.0"
+description = "Inter-procedural reachability analyzer pruning unreferenced functions, imports, and variables produced during AI refactoring sessions"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+    {name = "Ejaj Mahmud", email = "dev@ejajmahmud.com"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+]
+dependencies = []
+
+[project.scripts]
+automated-dead-code-stripper = "automated_dead_code_stripper.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["automated_dead_code_stripper*"]
